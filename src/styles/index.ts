@@ -18,11 +18,11 @@ export const ColumnContainer = styled.section`
     background-color: #ebecf0;
     max-width: 15rem;
     min-height: 8rem;
+    height: fit-content;
     margin-right: 0.5rem;
     margin: 0 0.5rem 0.5rem 0;
     border-radius: 0.2rem;
     padding: 0.8rem 0.8rem;
-    overflow: hidden;
 `
 
 export const ColumnTitle = styled.h2`

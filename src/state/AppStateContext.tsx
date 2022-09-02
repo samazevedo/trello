@@ -1,5 +1,5 @@
 import { createContext, useContext, Dispatch } from 'react'
-import { AppState, reducer, List, Task } from './reducers'
+import { AppState, appStateReducer, List, Task } from './reducers'
 import { Action } from './actions'
 import { useImmerReducer } from 'use-immer'
 
@@ -38,8 +38,8 @@ interface AppStateProviderProps {
     children: React.ReactNode
 }
 export const AppStateProvider = ({ children }: AppStateProviderProps) => {
-    const [, dispatch] = useImmerReducer(reducer, appData)
-    const { lists } = appData
+    const [state, dispatch] = useImmerReducer(appStateReducer, appData)
+    const { lists } = state
 
     const getTasksByListId = (id: string) => {
         return lists.find((list) => list.id === id)?.tasks || []

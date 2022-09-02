@@ -16,7 +16,12 @@ export type AppState = {
     lists: List[]
 }
 
-export const reducer = (draft: AppState, action: Action): AppState | void => {
+// DEFINE APPSTATE REDUCER
+
+export const appStateReducer = (
+    draft: AppState,
+    action: Action
+): AppState | void => {
     switch (action.type) {
         case ActionType.ADD_LIST: {
             draft.lists.push({
