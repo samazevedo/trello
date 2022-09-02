@@ -58,3 +58,8 @@ export const AppStateProvider = ({ children }: AppStateProviderProps) => {
         </AppStateContext.Provider>
     )
 }
+
+// CUSTOM HOOK
+export const useAppState = () => {
+    return useContext(AppStateContext)
+}

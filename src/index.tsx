@@ -3,6 +3,7 @@ import { StrictMode } from 'react'
 import reportWebVitals from './reportWebVitals'
 import { App } from './App'
 import { AppStateProvider } from './state/AppStateContext'
+import './index.css'
 
 const container = document.getElementById('root')
 const root = createRoot(container!)
