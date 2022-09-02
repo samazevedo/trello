@@ -2,9 +2,10 @@ import { AppContainer, ContainerWrapper } from './styles'
 import { Column } from './components/Column'
 import { AddNewItem } from './components/AddNewItem'
 import { useAppState } from './state/AppStateContext'
+import { addList } from './state/action-creators'
 
 export const App = () => {
-    const { lists } = useAppState()
+    const { lists, dispatch } = useAppState()
 
     return (
         <AppContainer>
@@ -15,7 +16,7 @@ export const App = () => {
                 })}
             </ContainerWrapper>
             <AddNewItem
-                onAdd={(text) => console.log(text)}
+                onAdd={(text) => dispatch(addList(text))}
                 toggleButtonText='+ Add another card'
                 dark
             />
